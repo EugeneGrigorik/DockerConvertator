@@ -17,6 +17,8 @@
     <properties>
         <java.version>1.8</java.version>
         <vaadin.version>13.0.3</vaadin.version>
+        <internal.port>8080</internal.port>
+        <external.port>8099</external.port>
     </properties>
 
     <dependencies>
@@ -112,7 +114,7 @@
                                 <from>openjdk:8-jre-alpine</from>
 
                                 <ports>
-                                    <port>8080</port>
+                                    <port>${internal.port}</port>
                                 </ports>
 
                                 <assembly>
@@ -142,7 +144,7 @@
 
                             <run>
                                 <ports>
-                                    <port>8099:8080</port>
+                                    <port>${external.port}:${internal.port}</port>
                                 </ports>
                             </run>
                         </image>
