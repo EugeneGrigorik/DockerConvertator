@@ -17,8 +17,6 @@
     <properties>
         <java.version>1.8</java.version>
         <vaadin.version>13.0.3</vaadin.version>
-        <internal.port>8080</internal.port>
-        <external.port>8099</external.port>
     </properties>
 
     <dependencies>
@@ -68,89 +66,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <artifactId>exec-maven-plugin</artifactId>
-                <groupId>org.codehaus.mojo</groupId>
-                <executions>
-                    <execution>
-                        <id>Version Convertator</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>git</executable>
-                            <workingDirectory>${basedir}</workingDirectory>
-                            <arguments>
-                                <argument>pull</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>io.fabric8</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.33.0</version>
-                <executions>
-                    <execution>
-                        <id>Build docker container</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <images>
-                        <image>
-                            <name>${project.name}</name>
-
-                            <build>
-                                <from>openjdk:8-jre-alpine</from>
-
-                                <ports>
-                                    <port>${internal.port}</port>
-                                </ports>
-
-                                <assembly>
-                                    <basedir>/</basedir>
-                                    <inline>
-                                        <dependencySet>
-                                            <outputDirectory>jars</outputDirectory>
-                                        </dependencySet>
-                                        <files>
-                                            <file>
-                                                <source>${project.build.directory}/${project.build.finalName}.jar</source>
-                                                <outputDirectory>jars</outputDirectory>
-                                            </file>
-                                        </files>
-                                    </inline>
-                                </assembly>
-
-                                <entryPoint>
-                                    <exec>
-                                        <arg>java</arg>
-                                        <arg>-jar</arg>
-                                        <arg>jars/${project.build.finalName}.jar</arg>
-                                    </exec>
-                                </entryPoint>
-
-                            </build>
-
-                            <run>
-                                <ports>
-                                    <port>${external.port}:${internal.port}</port>
-                                </ports>
-                            </run>
-                        </image>
-                    </images>
-
-                </configuration>
             </plugin>
         </plugins>
     </build>
