@@ -21,6 +21,8 @@
         <external.port>8099</external.port>
         <nexus.repo.port>8088</nexus.repo.port>
         <nexus.repo>docker-converter</nexus.repo>
+        <nexus.username>admin</nexus.username>
+        <nexus.password>HP5Q6wNexus</nexus.password>
     </properties>
 
     <dependencies>
@@ -78,10 +80,10 @@
                         <image>openjdk:8u171-alpine</image>
                     </from>
                     <to>
-                        <image>localhost:${nexus.repo.port}}/repository/${nexus.repo}}</image>
+                        <image>localhost:${nexus.repo.port}/repository/${nexus.repo}</image>
                         <auth>
-                            <username>admin</username>
-                            <password>HP5Q6wNexus</password>
+                            <username>${nexus.username}</username>
+                            <password>${nexus.password}</password>
                         </auth>
                     </to>
                     <container>
