@@ -19,10 +19,6 @@
         <vaadin.version>13.0.3</vaadin.version>
         <internal.port>8080</internal.port>
         <external.port>8099</external.port>
-        <nexus.repo.port>8088</nexus.repo.port>
-        <nexus.repo>docker-converter</nexus.repo>
-        <nexus.username>admin</nexus.username>
-        <nexus.password>HP5Q6wNexus</nexus.password>
     </properties>
 
     <dependencies>
@@ -70,6 +66,25 @@
     <build>
 
         <plugins>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <files>
+                                <file>src/main/resources/application.properties</file>
+                            </files>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
