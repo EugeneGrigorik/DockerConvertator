@@ -19,6 +19,8 @@
         <vaadin.version>13.0.3</vaadin.version>
         <internal.port>8080</internal.port>
         <external.port>8099</external.port>
+        <nexus.repo.port>8088</nexus.repo.port>
+        <nexus.repo>docker-converter</nexus.repo>
     </properties>
 
     <dependencies>
@@ -64,7 +66,34 @@
     </dependencyManagement>
 
     <build>
+
         <plugins>
+
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>2.1.0</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:8u171-alpine</image>
+                    </from>
+                    <to>
+                        <image>localhost:${nexus.repo.port}}/repository/${nexus.repo}}</image>
+                        <auth>
+                            <username>admin</username>
+                            <password>HP5Q6wNexus</password>
+                        </auth>
+                    </to>
+                    <container>
+                        <jvmFlags>
+                            <jvmFlag>-Xms2703m</jvmFlag>
+                            <jvmFlag>-Xmx2703m</jvmFlag>
+                        </jvmFlags>
+                    </container>
+                    <allowInsecureRegistries>true</allowInsecureRegistries>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
