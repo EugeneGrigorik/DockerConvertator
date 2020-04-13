@@ -1,0 +1,13 @@
+2020-04-10 11:50:22,115+0000 INFO  [quartz-4-thread-2]  *SYSTEM org.sonatype.nexus.repository.search.RebuildIndexTask - Task information:
+2020-04-10 11:50:22,148+0000 INFO  [quartz-4-thread-2]  *SYSTEM org.sonatype.nexus.repository.search.RebuildIndexTask -  ID: 758ac765-e46f-4cdb-adec-6a917e62313d
+2020-04-10 11:50:22,149+0000 INFO  [quartz-4-thread-2]  *SYSTEM org.sonatype.nexus.repository.search.RebuildIndexTask -  Type: repository.rebuild-index
+2020-04-10 11:50:22,149+0000 INFO  [quartz-4-thread-2]  *SYSTEM org.sonatype.nexus.repository.search.RebuildIndexTask -  Name: Repair - Rebuild repository search
+2020-04-10 11:50:22,150+0000 INFO  [quartz-4-thread-2]  *SYSTEM org.sonatype.nexus.repository.search.RebuildIndexTask -  Description: Rebuilding search index of *
+2020-04-10 11:50:22,195+0000 INFO  [quartz-4-thread-2]  *SYSTEM org.sonatype.nexus.repository.search.SearchFacetImpl - Rebuilding index of repository maven-snapshots
+2020-04-10 11:50:22,488+0000 INFO  [quartz-4-thread-2]  *SYSTEM org.sonatype.nexus.repository.search.SearchFacetImpl - Rebuilding index of repository maven-central
+2020-04-10 11:50:22,671+0000 INFO  [quartz-4-thread-2]  *SYSTEM org.sonatype.nexus.repository.search.SearchFacetImpl - Rebuilding index of repository nuget.org-proxy
+2020-04-10 11:50:22,858+0000 INFO  [quartz-4-thread-2]  *SYSTEM org.sonatype.nexus.repository.search.SearchFacetImpl - Rebuilding index of repository maven-releases
+2020-04-10 11:50:23,058+0000 INFO  [quartz-4-thread-2]  *SYSTEM org.sonatype.nexus.repository.search.SearchFacetImpl - Rebuilding index of repository nuget-hosted
+2020-04-10 11:50:23,235+0000 INFO  [quartz-4-thread-2]  *SYSTEM org.sonatype.nexus.repository.search.SearchFacetImpl - Rebuilding index of repository IvansDockerRepo
+2020-04-10 11:50:23,495+0000 INFO  [quartz-4-thread-2]  *SYSTEM org.sonatype.nexus.repository.search.SearchFacetImpl - Indexed 1 / 1 IvansDockerRepo components in 62 ms
+2020-04-10 11:50:23,496+0000 INFO  [quartz-4-thread-2]  *SYSTEM org.sonatype.nexus.repository.search.RebuildIndexTask - Task complete
