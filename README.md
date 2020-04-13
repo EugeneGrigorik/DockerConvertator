@@ -1,4 +1,5 @@
-#How to run application from Docker
+# How to run application from Docker  
+
 1. You need to run sonatype/nexus3 image using docker-compose.yml file.
 Open cmd and navigate to DockerConvertator/src/main/resources directory. Then run command:  
 ```docker-compose up```  
