@@ -17,8 +17,6 @@
     <properties>
         <java.version>1.8</java.version>
         <vaadin.version>13.0.3</vaadin.version>
-        <internal.port>8080</internal.port>
-        <external.port>8099</external.port>
     </properties>
 
     <dependencies>
@@ -80,6 +78,7 @@
                         <configuration>
                             <files>
                                 <file>src/main/resources/private.properties</file>
+                                <file>src/main/resources/docker-compose.properties</file>
                             </files>
                         </configuration>
                     </execution>
@@ -93,9 +92,13 @@
                 <configuration>
                     <from>
                         <image>openjdk:8u171-alpine</image>
+                        <auth>
+                            <username>ev1ldevel0per</username>
+                            <password>HP5Q6wDocker</password>
+                        </auth>
                     </from>
                     <to>
-                        <image>localhost:${nexus.repo.port}/repository/${nexus.repo}</image>
+                        <image>localhost:${nexus.repo.external-port}/repository/${nexus.repo}</image>
                         <auth>
                             <username>${nexus.username}</username>
                             <password>${nexus.password}</password>
